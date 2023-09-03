@@ -5,3 +5,17 @@
 ```
 ./app/secret/secret.json
 ```
+
+## docker
+
+build
+
+```
+docker build -t moffy-black/msm-cron .
+```
+
+run
+
+```
+docker run -d --rm moffy-black/msm-cron
+```

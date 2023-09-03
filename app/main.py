@@ -46,7 +46,7 @@ def set_rainfall_windspeed(docs,ds):
 
 if __name__ == "__main__":
     utc_now = datetime.utcnow();jst_offset = timedelta(hours=9);jst_now = utc_now + jst_offset
-    target_date = jst_now - timedelta(days=1,hours=4)
+    target_date = jst_now - timedelta(days=1)
     print(jst_now.strftime("%Y-%m-%d %H:%M:%S"))
     url = generate_url(target_date)
     ds = get_netcdf(url)
