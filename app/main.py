@@ -41,7 +41,7 @@ def set_rainfall_windspeed(docs,ds):
             event_location =  doc_data.get('location')
             event_longitude = event_location.longitude;event_latitude = event_location.latitude
             _rainfall1h,_windspeed1h = extract_rainfall_windspeed(ds,event_longitude,event_latitude)
-            event_ref.set({"rainfall1h":_rainfall1h,"_windspeed1h":_windspeed1h},merge=True)
+            event_ref.set({"rainfall1h":_rainfall1h,"windspeed1h":_windspeed1h},merge=True)
 
 
 if __name__ == "__main__":
