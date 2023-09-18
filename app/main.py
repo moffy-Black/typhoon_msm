@@ -37,11 +37,10 @@ def set_rainfall_windspeed(docs,ds):
     for doc in docs:
         doc_data = doc.to_dict();path = doc.reference.path;event_ref = DB.document(path)
         event_type = doc_data.get('eventtype')
-        if event_type == 'event':
-            event_location =  doc_data.get('location')
-            event_longitude = event_location.longitude;event_latitude = event_location.latitude
-            _rainfall1h,_windspeed1h = extract_rainfall_windspeed(ds,event_longitude,event_latitude)
-            event_ref.set({"rainfall1h":_rainfall1h,"windspeed1h":_windspeed1h},merge=True)
+        event_location =  doc_data.get('location')
+        event_longitude = event_location.longitude;event_latitude = event_location.latitude
+        _rainfall1h,_windspeed1h = extract_rainfall_windspeed(ds,event_longitude,event_latitude)
+        event_ref.set({"rainfall1h":_rainfall1h,"windspeed1h":_windspeed1h},merge=True)
 
 
 if __name__ == "__main__":
